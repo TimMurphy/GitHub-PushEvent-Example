@@ -1,5 +1,4 @@
-﻿using System;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using GitHub.PushEvent.Example.Models;
 
 namespace GitHub.PushEvent.Example.Controllers
@@ -12,9 +11,9 @@ namespace GitHub.PushEvent.Example.Controllers
         }
 
         [HttpPost]
-        public ActionResult PushEvent(GitHubPushEvent pushEvent)
+        public EmptyResult PushEvent(GitHubPushEvent pushEvent)
         {
-            throw new NotImplementedException("pushevent");
+            return new EmptyResult();
         }
     }
 }

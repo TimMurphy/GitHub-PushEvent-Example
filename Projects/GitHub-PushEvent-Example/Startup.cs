@@ -1,7 +1,8 @@
-﻿using Microsoft.Owin;
+﻿using GitHub.PushEvent.Example;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(GitHub.PushEvent.Example.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
 
 namespace GitHub.PushEvent.Example
 {

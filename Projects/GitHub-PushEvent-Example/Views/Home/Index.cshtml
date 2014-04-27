@@ -2,4 +2,196 @@
     ViewBag.Title = "Home Page";
 }
 
-<p>Hello</p>
+@section HeadScript
+{
+    <script type="text/javascript">
+
+        function PostPushEvent() {
+
+            var data = GetExampleData();
+            var json = JSON.stringify(data);
+
+            // construct an HTTP request
+            var request = new XMLHttpRequest();
+
+            request.open("POST", "/home/pushevent", /*async*/ false);
+            request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+            request.send(json);
+
+            if (request.status == 200) {
+                alert("Post succeeded.");
+            } else {
+                alert("Post failed. Status: " + request.status + ", Response: " + request.responseText);
+            }
+
+        }
+
+        function GetExampleData() {
+            return {
+                "ref": "refs/heads/master",
+                "after": "026c3b954faa32c58ac045f2230943ff10e9a41f",
+                "before": "34d5341545443d893e23469d43eee6d12532b65d",
+                "created": false,
+                "deleted": false,
+                "forced": false,
+                "compare": "https://github.com/TimMurphy/GitHub-PushEvent-Example/compare/34d534154544...026c3b954faa",
+                "commits": [
+                    {
+                        "id": "c9cae868378836ee8fabaa33d666ec9934cc9af9",
+                        "distinct": true,
+                        "message": "Updated README.md with instructions to configure github.com.",
+                        "timestamp": "2014-04-28T06:01:38+10:00",
+                        "url": "https://github.com/TimMurphy/GitHub-PushEvent-Example/commit/c9cae868378836ee8fabaa33d666ec9934cc9af9",
+                        "author": {
+                            "name": "Tim Murphy",
+                            "email": "tim@26tp.com",
+                            "username": "TimMurphy"
+                        },
+                        "committer": {
+                            "name": "Tim Murphy",
+                            "email": "tim@26tp.com",
+                            "username": "TimMurphy"
+                        },
+                        "added": [
+                        ],
+                        "removed": [
+                        ],
+                        "modified": [
+                            "README.md"
+                        ]
+                    },
+                    {
+                        "id": "026c3b954faa32c58ac045f2230943ff10e9a41f",
+                        "distinct": true,
+                        "message": "Added /pushevent stub.",
+                        "timestamp": "2014-04-28T06:02:07+10:00",
+                        "url": "https://github.com/TimMurphy/GitHub-PushEvent-Example/commit/026c3b954faa32c58ac045f2230943ff10e9a41f",
+                        "author": {
+                            "name": "Tim Murphy",
+                            "email": "tim@26tp.com",
+                            "username": "TimMurphy"
+                        },
+                        "committer": {
+                            "name": "Tim Murphy",
+                            "email": "tim@26tp.com",
+                            "username": "TimMurphy"
+                        },
+                        "added": [
+                        ],
+                        "removed": [
+                        ],
+                        "modified": [
+                            "Projects/GitHub-PushEvent-Example/Controllers/HomeController.cs"
+                        ]
+                    }
+                ],
+                "head_commit": {
+                    "id": "026c3b954faa32c58ac045f2230943ff10e9a41f",
+                    "distinct": true,
+                    "message": "Added /pushevent stub.",
+                    "timestamp": "2014-04-28T06:02:07+10:00",
+                    "url": "https://github.com/TimMurphy/GitHub-PushEvent-Example/commit/026c3b954faa32c58ac045f2230943ff10e9a41f",
+                    "author": {
+                        "name": "Tim Murphy",
+                        "email": "tim@26tp.com",
+                        "username": "TimMurphy"
+                    },
+                    "committer": {
+                        "name": "Tim Murphy",
+                        "email": "tim@26tp.com",
+                        "username": "TimMurphy"
+                    },
+                    "added": [
+                    ],
+                    "removed": [
+                    ],
+                    "modified": [
+                        "Projects/GitHub-PushEvent-Example/Controllers/HomeController.cs"
+                    ]
+                },
+                "repository": {
+                    "id": 19214333,
+                    "name": "GitHub-PushEvent-Example",
+                    "url": "https://github.com/TimMurphy/GitHub-PushEvent-Example",
+                    "description": "An example of how to receive a github.com PushEvent",
+                    "watchers": 0,
+                    "stargazers": 0,
+                    "forks": 0,
+                    "fork": false,
+                    "size": 0,
+                    "owner": {
+                        "name": "TimMurphy",
+                        "email": "tim@26tp.com"
+                    },
+                    "private": false,
+                    "open_issues": 0,
+                    "has_issues": true,
+                    "has_downloads": true,
+                    "has_wiki": true,
+                    "created_at": 1398626091,
+                    "pushed_at": 1398628948,
+                    "master_branch": "master"
+                },
+                "pusher": {
+                    "name": "TimMurphy",
+                    "email": "tim@26tp.com"
+                },
+                "distinct_commits": [
+                    {
+                        "id": "c9cae868378836ee8fabaa33d666ec9934cc9af9",
+                        "distinct": true,
+                        "message": "Updated README.md with instructions to configure github.com.",
+                        "timestamp": "2014-04-28T06:01:38+10:00",
+                        "url": "https://github.com/TimMurphy/GitHub-PushEvent-Example/commit/c9cae868378836ee8fabaa33d666ec9934cc9af9",
+                        "author": {
+                            "name": "Tim Murphy",
+                            "email": "tim@26tp.com",
+                            "username": "TimMurphy"
+                        },
+                        "committer": {
+                            "name": "Tim Murphy",
+                            "email": "tim@26tp.com",
+                            "username": "TimMurphy"
+                        },
+                        "added": [
+                        ],
+                        "removed": [
+                        ],
+                        "modified": [
+                            "README.md"
+                        ]
+                    },
+                    {
+                        "id": "026c3b954faa32c58ac045f2230943ff10e9a41f",
+                        "distinct": true,
+                        "message": "Added /pushevent stub.",
+                        "timestamp": "2014-04-28T06:02:07+10:00",
+                        "url": "https://github.com/TimMurphy/GitHub-PushEvent-Example/commit/026c3b954faa32c58ac045f2230943ff10e9a41f",
+                        "author": {
+                            "name": "Tim Murphy",
+                            "email": "tim@26tp.com",
+                            "username": "TimMurphy"
+                        },
+                        "committer": {
+                            "name": "Tim Murphy",
+                            "email": "tim@26tp.com",
+                            "username": "TimMurphy"
+                        },
+                        "added": [
+                        ],
+                        "removed": [
+                        ],
+                        "modified": [
+                            "Projects/GitHub-PushEvent-Example/Controllers/HomeController.cs"
+                        ]
+                    }
+                ],
+                "ref_name": "master"
+            };
+        };
+    </script>
+}
+
+<div>
+    <a href="#" onclick=" PostPushEvent(); return false; ">link text</a>
+</div>

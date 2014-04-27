@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 
 namespace GitHub.PushEvent.Example.Models
 {
@@ -19,6 +18,48 @@ namespace GitHub.PushEvent.Example.Models
         public Distinct_Commits[] distinct_commits { get; set; }
         public string ref_name { get; set; }
 
+        public class Author
+        {
+            public string name { get; set; }
+            public string email { get; set; }
+            public string username { get; set; }
+        }
+
+        public class Commit
+        {
+            public string id { get; set; }
+            public bool distinct { get; set; }
+            public string message { get; set; }
+            public DateTime timestamp { get; set; }
+            public string url { get; set; }
+            public Author author { get; set; }
+            public Committer committer { get; set; }
+            public object[] added { get; set; }
+            public object[] removed { get; set; }
+            public string[] modified { get; set; }
+        }
+
+        public class Committer
+        {
+            public string name { get; set; }
+            public string email { get; set; }
+            public string username { get; set; }
+        }
+
+        public class Distinct_Commits
+        {
+            public string id { get; set; }
+            public bool distinct { get; set; }
+            public string message { get; set; }
+            public DateTime timestamp { get; set; }
+            public string url { get; set; }
+            public Author author { get; set; }
+            public Committer committer { get; set; }
+            public object[] added { get; set; }
+            public object[] removed { get; set; }
+            public string[] modified { get; set; }
+        }
+
         public class Head_Commit
         {
             public string id { get; set; }
@@ -33,18 +74,16 @@ namespace GitHub.PushEvent.Example.Models
             public string[] modified { get; set; }
         }
 
-        public class Author
+        public class Owner
         {
             public string name { get; set; }
             public string email { get; set; }
-            public string username { get; set; }
         }
 
-        public class Committer
+        public class Pusher
         {
             public string name { get; set; }
             public string email { get; set; }
-            public string username { get; set; }
         }
 
         public class Repository
@@ -67,46 +106,6 @@ namespace GitHub.PushEvent.Example.Models
             public int created_at { get; set; }
             public int pushed_at { get; set; }
             public string master_branch { get; set; }
-        }
-
-        public class Owner
-        {
-            public string name { get; set; }
-            public string email { get; set; }
-        }
-
-        public class Pusher
-        {
-            public string name { get; set; }
-            public string email { get; set; }
-        }
-
-        public class Commit
-        {
-            public string id { get; set; }
-            public bool distinct { get; set; }
-            public string message { get; set; }
-            public DateTime timestamp { get; set; }
-            public string url { get; set; }
-            public Author author { get; set; }
-            public Committer committer { get; set; }
-            public object[] added { get; set; }
-            public object[] removed { get; set; }
-            public string[] modified { get; set; }
-        }
-
-        public class Distinct_Commits
-        {
-            public string id { get; set; }
-            public bool distinct { get; set; }
-            public string message { get; set; }
-            public DateTime timestamp { get; set; }
-            public string url { get; set; }
-            public Author author { get; set; }
-            public Committer committer { get; set; }
-            public object[] added { get; set; }
-            public object[] removed { get; set; }
-            public string[] modified { get; set; }
         }
     }
 }
