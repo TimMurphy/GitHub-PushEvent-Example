@@ -14,4 +14,10 @@ An example of how to receive a github.com PushEvent
 
 ## Configure website
 
-- See HomeController.PushEvent().
+- See HomeController.PushEvent(GitHubPushEvent pushEvent).
+
+## Example
+
+- Open the website.
+- Click the link.
+- That's all it takes.

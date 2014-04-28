@@ -10,6 +10,10 @@ namespace GitHub.PushEvent.Example.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Receives GitHub PushEvent.
+        /// </summary>
+        /// <param name="pushEvent">The push event.</param>
         [HttpPost]
         public EmptyResult PushEvent(GitHubPushEvent pushEvent)
         {
